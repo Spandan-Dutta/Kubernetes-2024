@@ -1,1 +1,10 @@
-This is a sample file
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-httpd-container
+spec: 
+  containers:
+   - name: my-httpd-container
+     image: httpd
+     ports: 
+      - containerPort: 80
