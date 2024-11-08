@@ -8,6 +8,9 @@ metadata:
 spec: 
   containers:
    - name: my-httpd-container
-     image: httpd
+     image: "vimal13/apache-webserver-php"
      ports: 
       - containerPort: 80
+     env:
+      - name: x
+        value: "5"

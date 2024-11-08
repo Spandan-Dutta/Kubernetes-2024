@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: my-replicaset
+
+spec:
+  replicas: 2
+  selector:
+    matchExpressions:
+      - key: environment
+        operator: In
+        values: [staging]
+
+      - key: region
+        operator: In
+        values: [ap-south-1]
+      
+      - key: az
+        operator: Exists
+
+  template:
+    metadata:
+      name: replicaset-pod
+      labels:
+        environment: staging
+        region: ap-south-1
+        az: ap-south-1a  
+      
+    spec:
+      containers:
+        - name: replicaset-container
+          image: "vimal13/apache-webserver-php"
+          ports:
+            - containerPort: 80
