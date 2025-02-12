@@ -1,0 +1,71 @@
+Below are some references:
+
+Certified Kubernetes Administrator: https://www.cncf.io/certification/cka/
+
+Exam Curriculum (Topics): https://github.com/cncf/curriculum
+
+Candidate Handbook: https://www.cncf.io/certification/candidate-handbook
+
+Exam Tips: http://training.linuxfoundation.org/go//Important-Tips-CKA-CKAD
+
+
+Install ETCD:
+
+1) Download Binaries: curl -L https://github.com/etcd-io/etcd/releases/download/v3.3.11/etcd-v3.3.11-linux-amd64.tar.gz -o   
+        etcd-v3.3.11-linux-amd64.tar.gz   
+2) Extract the tar file: tar -xvzf etcd-v3.3.11-linux-amd64.tar.gz
+3) Run etcd: ./etcd  , port: 2379
+4) Commands: 
+    
+    ./etcdctl set key1 value1   [version: 2]
+    ./etcdctl get key1
+    ./etcdctl --version
+    ETCDCTL_API=3 ./etcdctl version
+    export ETCDCTL_API=3
+      ./etcdctl --version
+    ./etcdctl put key1 value1   [version: 3]
+
+
+
+Pods [YAML in Kubernetes]:
+
+ pod-definition.yml
+
+   [*] apiVersion: v1 
+         [Version of Kubernetes API which we are using.
+           POD: v1
+           Service: v1
+           ReplicaSet: apps/v1
+           Deployment: apps/v1
+         ]
+
+   [*]kind: Pod 
+   		 [Kind of Service which we want to deploy]
+
+   [*]metadata:  
+   [*]spec:
+
+Kubernetes Commands:
+
+
+1) minikube start --driver docker --force
+2) minikube status 
+3) sudo kubectl create -f pod.yml
+4) sudo kubectl get pods
+5) sudo kubectl get nodes 
+6) sudo kubectl get pods -o wide
+7) sudo minikube ssh
+8) sudo kubectl logs nginx 
+9) sudo kubectl describe pod nginx
+10) sudo kubectl get all
+11) sudo kubectl get pods -w
+12) sudo kubectl get pods -v=7 
+13) kubectl get deployment
+14) kubectl create deployment my-web-app --image=vimal13/apache-webserver-php
+15) kubectl scale deployment my-web-app --replicas=3
+16) kubectl expose deployment my-web-app --type=NodePort --port=80
+17) kubectl describe svc my-web-app
+18) kubectl get svc my-web-app
+19)
+20)
+
