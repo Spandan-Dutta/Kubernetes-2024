@@ -42,7 +42,10 @@ Pods [YAML in Kubernetes]:
    [*]kind: Pod 
    		 [Kind of Service which we want to deploy]
 
-   [*]metadata:  
+   [*]metadata: 
+         name: myapp-pod
+         labels:
+            app: myapp 
    [*]spec:
 
 Kubernetes Commands:
